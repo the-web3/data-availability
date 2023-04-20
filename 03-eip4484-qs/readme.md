@@ -233,10 +233,11 @@ Proto-danksharding 引入了一个多维度的 EIP-1559 费用市场，其中有
 
 也就是说，有两个变量和四个常量：
 
-｜       |	Target per block	｜ Max per block	| Basefee   |
-｜:-----:|:----------------------:|:--------------:|:--------:|
-｜ Gas	|       15 million	     |  30 million	  | Variable |
-｜ Blob  |        8	             |  16	          | Variable |
+|       |	Target per block	| Max per block	| Basefee   |
+|:-----:|:----------------------:|:--------------:|:--------:|
+| Gas	|       15 million	     |  30 million	  | Variable |
+| Blob  |        8	             |  16	          | Variable |
+
 
 blob 费用以 gas 计费，但它是可变数量的 gas，它会进行调整，以便从长远来看每个区块的平均 blob 数量实际上等于目标。
 
@@ -262,6 +263,41 @@ blob 费用以 gas 计费，但它是可变数量的 gas，它会进行调整，
 由于这些原因，更复杂的费用市场动态不会大大增加中心化或风险； 事实上，更广泛应用的原则实际上可以降低拒绝服务风险！
 
 
+## 16.指数型 EIP-1559 blob 费用调整机制如何运作？
+
+## 17.fake_exponential 是如何工作的？
+为方便起见，这里是 fake_exponential 的代码：
+```
+def fake_exponential(numerator: int, denominator: int) -> int:
+    cofactor = 2 ** (numerator // denominator)
+    fractional = numerator % denominator
+    return cofactor + (
+        fractional * cofactor * 2 +
+        (fractional ** 2 * cofactor) // denominator
+    ) // (denominator * 3)
+```
+
+这里是用数学重新表达的核心机制，去掉了四舍五入：
+
+[![03](https://github.com/0xchaineye/chaineye-data-availability/blob/main/images/03.png)](https://github.com/savour-labs)
+
+[![04](https://github.com/0xchaineye/chaineye-data-availability/blob/main/images/04.png)](https://github.com/savour-labs)
+
+[![05](https://github.com/0xchaineye/chaineye-data-availability/blob/main/images/05.png)](https://github.com/savour-labs)
+
+
+
+
+## 18.proto-danksharding 中有哪些问题仍在争论中？
+
+注意：此部分很容易变得过时。 不要相信它会给出任何特定问题的最新想法。
+
+- 所有主要的 optimistic rollups 都使用多轮证明，因此它们可以使用（便宜得多的）点评估预编译而不是 blob 验证预编译。 任何真正需要 blob 验证的人都可以自己实现它：将 blob 作为输入
+D 和版本哈希 h， 选择 X= Hash(D, h), 使用重心评估来计算 y = D(x) 并使用点评估预编译来验证 h(x) = y. 因此，我们真的需要 blob 验证预编译，还是我们可以删除它并只使用点评估？
+- 链条如何处理持久的长期 1 MB+ 块？ 如果风险太大，是否应该在开始时减少目标 blob 数量？
+- blob 应该以 gas 还是以 ETH（被销毁）定价？ 是否应该对费用市场进行其他调整？
+- 新交易类型应该被视为 blob 还是 SSZ 对象，在后一种情况下将 ExecutionPayload 更改为联合类型？ （这是“现在更多工作”与“以后更多工作”的权衡）
+- 可信设置实施的确切细节（技术上超出了 EIP 本身的范围，因为对于实施者来说，设置“只是一个常量”，但仍然需要完成）。
 
 
 
