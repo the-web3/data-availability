@@ -265,6 +265,8 @@ blob 费用以 gas 计费，但它是可变数量的 gas，它会进行调整，
 
 ## 16.指数型 EIP-1559 blob 费用调整机制如何运作？
 
+[eip4844里面的解释](https://www.eip4844.com/)
+
 ## 17.fake_exponential 是如何工作的？
 为方便起见，这里是 fake_exponential 的代码：
 ```
@@ -286,8 +288,6 @@ def fake_exponential(numerator: int, denominator: int) -> int:
 [![05](https://github.com/0xchaineye/chaineye-data-availability/blob/main/images/05.png)](https://github.com/savour-labs)
 
 
-
-
 ## 18.proto-danksharding 中有哪些问题仍在争论中？
 
 注意：此部分很容易变得过时。 不要相信它会给出任何特定问题的最新想法。
@@ -298,18 +298,4 @@ D 和版本哈希 h， 选择 X= Hash(D, h), 使用重心评估来计算 y = D(x
 - blob 应该以 gas 还是以 ETH（被销毁）定价？ 是否应该对费用市场进行其他调整？
 - 新交易类型应该被视为 blob 还是 SSZ 对象，在后一种情况下将 ExecutionPayload 更改为联合类型？ （这是“现在更多工作”与“以后更多工作”的权衡）
 - 可信设置实施的确切细节（技术上超出了 EIP 本身的范围，因为对于实施者来说，设置“只是一个常量”，但仍然需要完成）。
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
