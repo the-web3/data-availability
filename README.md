@@ -9,13 +9,25 @@
 
 ### 教程目录
 
-#### 1.[Data Availability 社区汇总](https://github.com/0xchaineye/chaineye-data-availability/blob/main/00-community/readme.md)
-#### 2.[Data Availability 相关项目介绍](https://github.com/0xchaineye/chaineye-data-availability/tree/main/01-introduce#readme)
-#### 3.[EIP4484 介绍](https://github.com/0xchaineye/chaineye-data-availability/tree/main/02-what-is-eip4484#readme)
-#### 4.[EIP 4844 的一些问答](https://github.com/0xchaineye/chaineye-data-availability/tree/main/03-eip4484-qs#readme)
-#### 5.[Celestia Data Availability 解决方案]()
-#### 6.[Eip4484 Data Availability 解决方案]()
-#### 7.[EigenLayer Data Availability解决方案]()
+#### 总揽
+
+##### 1.[Data Availability 社区汇总](https://github.com/0xchaineye/chaineye-data-availability/blob/main/00-community/readme.md)
+##### 2.[Data Availability 相关项目介绍](https://github.com/0xchaineye/chaineye-data-availability/tree/main/01-introduce#readme)
+
+#### EIP 4484
+
+##### 1.[EIP4484 介绍](https://github.com/0xchaineye/chaineye-data-availability/tree/main/02-what-is-eip4484#readme)
+##### 2.[EIP 4844 的一些问答](https://github.com/0xchaineye/chaineye-data-availability/tree/main/03-eip4484-qs#readme)
+
+#### Celestia
+
+##### 1.[什么事 Celestia]()
+##### 2.[Celestia Data Availability 解决方案]()
+
+#### Celestia
+
+##### 1.[什么是 EigenLayer]()
+##### 2.[EigenLayer Data Availability解决方案]()
 
 
 ## 联系作者
