@@ -24,7 +24,7 @@
 - ##### 1.[什么事 Celestia]()
 - ##### 2.[Celestia Data Availability 解决方案]()
 
-#### Celestia
+#### EigenLayer
 
 - ##### 1.[什么是 EigenLayer]()
 - ##### 2.[EigenLayer Data Availability解决方案]()
