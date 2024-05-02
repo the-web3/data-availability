@@ -4,9 +4,9 @@
 
 推特：@seek_web3
 
-Chainey 社群： 官网 chaineye.info | Chaineye data-availability 教程 | 微信: LGZAXE, 加微信之后拉各社群
+Chainey 社群： 官网 chaineye.info | The Web3 data-availability 教程 | 微信: LGZAXE, 加微信之后拉各社群
 
-所有代码和教程开源在github: https://github.com/0xchaineye/chaineye-data-availability
+所有代码和教程开源在github: https://github.com/the-web3/data-availability
 
 -----------------------------------------------------------------------------------------------------------------------------------------------------------
 
